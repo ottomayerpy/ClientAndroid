@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ClientAndroid"
+             x:Class="ClientAndroid.MainPage">
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="ClientAndroid">
+            <ContentPage.Content>
+                <StackLayout Padding="5,30,5,5">
+                    <Button Text="Подключение" Clicked="ButtonConnect_Clicked"></Button>
+                    <Button Text="Каталоги" Clicked="ButtonCatalog_Clicked"></Button>
+                    <Button Text="Управление" Clicked="ButtonControl_Clicked"></Button>
+                    <Button Text="Сценарии" Clicked="ButtonScripts_Clicked"></Button>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <ContentPage>
+            <ContentPage.Content>
+                <Label Text="Welcome ClientAndroid!" FontSize="30" VerticalOptions="Center" HorizontalOptions="Center"/>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+
+</MasterDetailPage>
+
+
+
+
+
+
+
+public partial class MainPage : MasterDetailPage
+    {
+        public MainPage()
+        {
+            InitializeComponent();
+
+            Detail = new NavigationPage(new ConnectPage())
+            {
+                BarBackgroundColor = Color.Blue
+            };
+        }
+
+        private void ButtonConnect_Clicked(object sender, EventArgs e)
+        {
+            Detail = new NavigationPage(new ConnectPage())
+            {
+                BarBackgroundColor = Color.Blue
+            };
+            IsPresented = true;
+        }
+
+        private void ButtonCatalog_Clicked(object sender, EventArgs e)
+        {
+            Detail = new NavigationPage(new CatalogPage())
+            {
+                BarBackgroundColor = Color.Blue
+            };
+            IsPresented = true;
+        }
+
+        private void ButtonControl_Clicked(object sender, EventArgs e)
+        {
+            Detail = new NavigationPage(new ControlPage())
+            {
+                BarBackgroundColor = Color.Blue
+            };
+            IsPresented = true;
+        }
+
+        private void ButtonScripts_Clicked(object sender, EventArgs e)
+        {
+            Detail = new NavigationPage(new ScriptsPage())
+            {
+                BarBackgroundColor = Color.Blue
+            };
+            IsPresented = true;
+        }
+    }

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientAndroid.ConnectPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Editor x:Name="TxtIP" TextChanged="TxtIP_TextChanged"/>
+            <Editor x:Name="TxtPort" TextChanged="TxtPort_TextChanged"/>
+            <Editor x:Name="TxtCommand"/>
+            <Button x:Name="ButtonStart" Text="Запустить" Clicked="ButtonStart_Clicked"/>
+            <Label x:Name="LabelLog" Text="Ожидание ответа сервера..." VerticalOptions="End" HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

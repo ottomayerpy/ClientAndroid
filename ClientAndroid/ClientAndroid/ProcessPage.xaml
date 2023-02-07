@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientAndroid.ProcessPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="LabelProcess" Text="This.Process.Name" HorizontalOptions="Center" FontSize="15"></Label>
+            <ListView x:Name="ProcessListView" ItemsSource="{Binding data}" ItemTapped="ProcessListView_ItemTapped" />
+            <Button x:Name="ButtonClose" Text="Завершить" Clicked="ButtonClose_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

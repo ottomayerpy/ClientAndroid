@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientAndroid.CatalogPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="ItemChangeMode" Text="Каталоги" Order="Primary" Activated="ItemChangeMode_Clicked"></ToolbarItem>
+        <ToolbarItem x:Name="ItemCreate" Text="Создать" Order="Secondary" Activated="ItemCreate_Clicked"></ToolbarItem>
+        <ToolbarItem x:Name="ItemDelete" Text="Удалить" Order="Secondary" Activated="ItemDelete_Clicked"></ToolbarItem>
+        <ToolbarItem x:Name="ItemMove" Text="Переместить" Order="Secondary" Activated="ItemMove_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <Label x:Name="LabelCatalog" Text="This.Catalog.Path" HorizontalOptions="Center" FontSize="15"></Label>
+        <Label x:Name="LabelSelectItem" Text="This.SelectItem.Name" HorizontalOptions="Center" FontSize="15"></Label>
+        <ListView x:Name="ListView" ItemsSource="{Binding data}" ItemTapped="ListView_ItemTapped"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid x:Name="BottomGrid" Grid.Row="0" BindingContext="{x:Reference Name=ButtonOpen}"  HeightRequest="{Binding Width}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="ButtonBack" Grid.Column="0" Text="Назад" Clicked="ButtonBack_Clicked"/>
+                <Button x:Name="ButtonOpen" Grid.Column="1" Text="Открыть" Clicked="ButtonOpen_Clicked"/>
+            </Grid>
+        </Grid>
+    </StackLayout>
+</ContentPage>
